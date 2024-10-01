@@ -1,0 +1,5 @@
+{
+  "firstName": "${firstNames}",
+  "lastName": "${lastNames}",
+  "postalCode": "${postalCode}"
+}
