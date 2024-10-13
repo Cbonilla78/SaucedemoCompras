@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.annotations.Subject;
 import static com.saucedemo.project.utils.SelectLocator.getAmountYourCart;
 
+
 @AllArgsConstructor
 @Slf4j
 public class ValidateTheProductToCart implements Question<Boolean> {

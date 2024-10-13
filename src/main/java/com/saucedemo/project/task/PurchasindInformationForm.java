@@ -24,7 +24,7 @@ import static com.saucedemo.project.ui.PurchasindInformationFormUI.*;
 public class PurchasindInformationForm implements Task {
 
     private String pathFile;
-    private static Faker faker = Faker.instance(new Locale("es", "CO"), new Random());
+    private static Faker faker = Faker.instance(new Locale("es", "EC"), new Random());
 
     @Override
     public <T extends Actor> void performAs(T actor) {

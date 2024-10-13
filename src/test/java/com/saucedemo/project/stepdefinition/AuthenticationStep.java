@@ -38,7 +38,6 @@ public class AuthenticationStep {
                 Login.authentication(user, pwd)
         );
     }
-
     @When("ingresa las credenciales incorrectas")
     public void entertheincorrectcredentials() {
         user = EnvironmentSpecificConfiguration.from(environmentVariables).getProperty(USER_NAME);
@@ -47,6 +46,20 @@ public class AuthenticationStep {
                 Login.authentication(pwd,user)
         );
     }
-
+    @Then("visualizara el home y espera una validacion")
+    public void itWillDisplayTheHomeAndWaitForAValidation() {
+        theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat(
+                        TheWebPage.title(),
+                        Matchers.containsString(TITLE_WEBSITE)
+                )
+        );
+    }
+    @Then("visualizara un mensaje de error")
+    public void willDisplayAnErrorMessage() {
+        theActorInTheSpotlight().should(
+                seeThat(ValidateErrorCredentials.faild(ERROR_MESSAGE_TEXT))
+        );
+    }
 
 }

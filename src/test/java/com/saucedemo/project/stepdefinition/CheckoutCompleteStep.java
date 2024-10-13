@@ -13,6 +13,11 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
+
+
+
+
+
 public class CheckoutCompleteStep {
 
     public static final String userDirectoryPath = System.getProperty("user.dir");
@@ -22,10 +27,11 @@ public class CheckoutCompleteStep {
         OnStage.setTheStage(new OnlineCast());
     }
 
-    @When("se autentica de forma exitosa y realiza todo el proceso hasta completar el formulario de datos de la compra {string}")
+
+    @When("completar el formulario de datos de la compra {string}")
     public void isSuccessfullyAuthenticatedAndPerformsTheEntireProcessUntilThePurchaseDataFormIsCompleted(String data) {
         theActorCalled(ACTOR).attemptsTo(
-                ChooseProducts.withParams(TWO),
+          //      ChooseProducts.withParams(TWO),
                 YourCart.access(),
                 YouCartCheckout.access(),
                 PurchasindInformationForm.withParams
